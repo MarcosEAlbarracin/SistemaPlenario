@@ -1,0 +1,27 @@
+﻿@model SistemaPlenario.Models.Telefonos
+@{
+    ViewBag.Title = "Cargar Telefono";
+    List<SelectListItem> items = (List<SelectListItem>)ViewBag.Items;
+}
+
+<h4>Alta</h4>
+<br/>
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Alta", "Telefonos", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationMessage("Error de carga", new { @class="text-danger"})
+
+            @Html.LabelFor(d=>d.PersonaID,"Nombre")
+            @Html.DropDownListFor(d=>d.PersonaID, items, "Seleccionar Persona", new { @class = "form-control" })
+            
+            <br/>
+            @Html.LabelFor(d=>d.Telefono)
+            @Html.TextBoxFor(d=>d.Telefono)
+            <br />
+            <br />
+            <input type="submit" value="Guardar" class="btn btn-success"/>
+        }
+    </div>
+</div>

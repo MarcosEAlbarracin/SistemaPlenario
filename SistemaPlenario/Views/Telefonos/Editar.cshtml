@@ -1,0 +1,29 @@
+﻿@model SistemaPlenario.Models.Telefonos
+@{
+    ViewBag.Title = "Editar";
+    List<SelectListItem> items= (List<SelectListItem>)ViewBag.items;
+}
+
+<h4>Editar Telefono</h4>
+<br />
+<div class="row">
+    <div class="col-md-12">
+        @using (Html.BeginForm("Editar", "Telefonos", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationMessage("Error de carga", new { @class = "text-danger" })
+
+            @Html.HiddenFor(d=>d.TelefonoID)
+            @Html.LabelFor(d => d.PersonaID, "Nombre")
+            @Html.DropDownListFor(d => d.PersonaID, items, "Seleccionar Persona", new { @class = "form-control" })
+
+            <br />
+            @Html.LabelFor(d => d.Telefono)
+            @Html.TextBoxFor(d => d.Telefono)
+            <br />
+            <br />
+            <input type="submit" value="Guardar" class="btn btn-success" />
+            <input onclick="document.location.href='@Url.Content("~/Telefonos/Index")'" type="button" class="btn btn-danger" value="Cancelar" />
+        }
+    </div>
+</div>

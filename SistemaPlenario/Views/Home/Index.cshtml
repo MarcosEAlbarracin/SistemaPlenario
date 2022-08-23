@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+<h4>Objetivo: Realizar un ABMC de Personas y Teléfonos.</h4>
+
+<p>Crear un proyecto utilizando MVC C# (HTML5+CSS+Bootstrap+Jquery+Ajax+JavaScript) y
+luego crear otro proyecto de WinForms utilizando capas (Entidad, Datos, Negocios y Presentación).</p>
+
+<p>
+    Utilizar Entity Framework (EF) y Linq Lambda para las consultas de datos.
+
+    No utilizar scaffolding.
+
+    El ABM tiene que estar completo y no tiene que tener fallas funcionales ni técnicas
+    y contener validaciones de campos.
+</p>
+
+Además del funcionamiento se calificará la calidad del código fuente y su prolijidad.<br/>
+<br/>
+<p>a.	Crear un Proyecto C# y Base de Datos.<br/>
+b.	Estructura de tablas:<br/>
+  i.	Tabla “Personas”<br/>
+    1.	PersonaID Int (identity)<br/>
+    2.	Nombre Varchar(50)<br/>
+    3.	FechaNacimiento Datetime<br/>
+    4.	CreditoMaximo Numeric(20, 2)<br/>
+  ii.	Tabla “Telefonos”<br/>
+    1.	TelefonoID Int (identity)<br/>
+    2.	PersonaID Int (Relación con Personas.PersonaID)<br/>
+    3.	Telefono VarChar(50)<br/>
+c.	Las pantallas deberán que contener los siguientes mínimos controles y sus<br/>
+        correspondientes funcionalidades:<br/>
+  i.	Formulario de Grilla de personas.<br/>
+    1.	Grilla de personas.<br/>
+    2.	Botón para agregar persona.<br/>
+    3.	Botón para modificar persona seleccionada.<br/>
+    4.	Botón para borrar persona seleccionada.<br/>
+    5.	Botón para visualizar los teléfonos de una persona seleccionada.<br/>
+    6.	Boton para buscar por nombre (agregar control para ingresar valor)
+        esta búsqueda deberá realizarse a la base de datos (utilizando EF con Linq Lambda)<br/>
+  ii.	Formulario de alta y modificación de persona.<br/>
+    1.	Control para cargar el nombre.<br/>
+    2.	Control para cargar la fecha de nacimiento.<br/>
+    3.	Control para cargar el crédito máximo<br/>
+    4.	Botón para aceptar/guardar cambios y volver a la grilla visualizando el dato cargado.<br/>
+  iii.	Formulario de grilla de Teléfonos<br/>
+    1.	Grilla de Teléfonos de la persona seleccionada<br/>
+    2.	Botón para agregar Teléfono<br/>
+    3.	Botón para modificar Teléfono<br/>
+    4.	Botón para borrar Teléfono<br/>
+  iv.	Formulario de alta y modificación de Teléfonos de una persona<br/>
+    1.	Control para agregar el Teléfono<br/>
+    2.	Botón para aceptar/guardar cambios.<br/>
+
+</p>

@@ -1,0 +1,34 @@
+﻿@model SistemaPlenario.Models.Personas
+@{
+    ViewBag.Title = "Nueva Persona";
+}
+
+<h4>Nueva Persona</h4>
+<br/>
+<div class="row">
+    <div class="col-md-9">
+        @using (Html.BeginForm("Crear","Personas",FormMethod.Post, new { role= "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("Error de Carga", new { @class = "text-danger"})
+
+            @Html.LabelFor(d=>d.Nombre, new { @class = "control-label col-md-3" })
+            @Html.TextBoxFor(d => d.Nombre, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(d => d.FechaNacimiento,new { @class = "control-label col-md-3" })
+            @Html.EditorFor(d => d.FechaNacimiento, new { htmlAttributes = new { @class = "form-control" } })
+            <br />
+            @Html.LabelFor(d => d.CreditoMaximo, new { @class = "control-label col-md-3" })
+            @Html.EditorFor(d => d.CreditoMaximo, new { htmlAttributes = new { @class = "form-control" } })
+
+            <br />
+            <br />
+            <input type="submit" class="btn btn-success" value="Guardar" />
+        }
+    </div>
+</div>
+
+@*section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

@@ -1,0 +1,33 @@
+﻿@model SistemaPlenario.Models.Personas
+@{
+    ViewBag.Title = "Editar Persona";
+}
+
+<h4>Editar Persona</h4>
+<br/>
+<div class="row">
+    <div class="col-md-9">
+        @using (Html.BeginForm("Editar", "Personas", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.HiddenFor(d=>d.PersonaID)
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationMessage("Error de Carga", new { @class = "text-danger" })
+
+            @Html.LabelFor(d => d.Nombre)
+            @Html.TextBoxFor(d => d.Nombre)
+            <br />
+            @Html.LabelFor(d => d.FechaNacimiento, "Fecha de Nacimiento")
+            @Html.EditorFor(d=>d.FechaNacimiento,"Fecha de Nacimiento")
+            <br />
+            @Html.LabelFor(d => d.CreditoMaximo, "Credito Maximo")
+            @Html.EditorFor(d => d.CreditoMaximo)
+            <br />
+            <br />
+            <input type="submit" class="btn btn-success" value="Guardar" />
+            <input onclick="document.location.href='@Url.Content("~/Personas/Index")'" type="button" class="btn btn-danger" value="Cancelar" />
+        }
+        
+    </div>
+</div>
+
